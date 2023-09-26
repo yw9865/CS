@@ -34,4 +34,3 @@
 ### TODOs
 - [ ] Migrate Notes from Notion
 - [ ] Make md from iPad
--test obisdian gdfsdf
