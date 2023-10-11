@@ -45,7 +45,15 @@ e.g.![[Pasted image 20231011134840.png]]
 - N개의 스레드 중 N-1 개가 희생됨
  
 #### Filter Lock
-- one victim & t
+- one victim & 2 flags variables
+- 하지만 얘도 lock level이 너무 커짐
+
+둘의 단점
+1. n 개 스레드의 mutual execution을 지원하기 위해 2n개의 공유 변수가 필요함
+2. weak liveness properties:
+	- starvation freedom은 언젠가 스레드가 critical seciton에 진입할 수 있음을 의미.
+	- lock level이 너무 커짐. bound가 필요함.
+=> upper bound를 설정해서 너무 많은 스레드가 lock걸리지 않게 하고 싶음
 
 #### Bakery Lock
 
