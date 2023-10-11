@@ -30,9 +30,14 @@ e.g.![[Pasted image 20231011134840.png]]
 ![[Pasted image 20231011140623.png]]
 
 **2. LockTwo**
+![[Pasted image 20231011141609.png]]
+- 
 
 #### Peterson's Lock
-
+- LockOne과 LockTwo를 합침
+- Mutual Exclusion
+- Deadlock free
+- Starvation free
 
 #### Filter Lock
 
