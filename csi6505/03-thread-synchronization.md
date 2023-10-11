@@ -17,13 +17,19 @@
 #### Mutual execution Property
 - Critical section이 겹치면 안 된다.
 
+#### Examples
+**1. LockOne**
+- l각자의 lock을 사용
+- 내 lock을 걸고 다른 lock이 걸려있는지 확인 후에 critical section에 진입 가능
 
-내 lock을 걸고 다른 lock이 걸려있는지 확인 후에 critical section에 진입 가능
 e.g.![[Pasted image 20231011134840.png]]
 하지만 이것 역시 문제가 있음
 ![[Pasted image 20231011135228.png]]
-irreflexive
+1 irreflexive. cycle이 됨
+2. 둘이 동시에 flag를 raise하면 deadlock에 빠짐
+![[Pasted image 20231011140623.png]]
 
+**2. LockTwo**
 
 #### Peterson's Lock
 
