@@ -39,8 +39,13 @@ e.g.![[Pasted image 20231011134840.png]]
 - Deadlock free
 - Starvation free
 
+단점
+![[Pasted image 20231011142617.png]]
+- 각 스레드가 lock을 가져서 한 스레드가 실행되려면 나머지 다른 스레드들이 희생되어야 한다.
+- N개의 스레드 중 N-1 개가 희생됨
+ 
 #### Filter Lock
-
+- one victim & t
 
 #### Bakery Lock
 
