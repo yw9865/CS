@@ -55,6 +55,12 @@ e.g.![[Pasted image 20231011134840.png]]
 	- lock level이 너무 커짐. bound가 필요함.
 => upper bound를 설정해서 너무 많은 스레드가 lock걸리지 않게 하고 싶음
 
+##### r-bounded Waiting
+- r bound를 걸어 weak livenesss를 막음.
+- 언젠가 진입하지 않고 상한선이 존재
+- r번 overtake 해야함
+- 은행의 번호표와 유사
+
 #### Bakery Lock
 
 
