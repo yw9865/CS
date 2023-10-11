@@ -17,6 +17,14 @@
 #### Mutual execution Property
 - Critical section이 겹치면 안 된다.
 
+
+내 lock을 걸고 다른 lock이 걸려있는지 확인 후에 critical section에 진입 가능
+e.g.![[Pasted image 20231011134840.png]]
+하지만 이것 역시 문제가 있음
+![[Pasted image 20231011135228.png]]
+irreflexive
+
+
 #### Peterson's Lock
 
 
