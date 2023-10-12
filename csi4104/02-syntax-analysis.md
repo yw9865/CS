@@ -122,6 +122,20 @@ public class MicroEnglishParser {
 }
 ```
 
+
+
+### **Systematic Development of a RD parser**
+1. EBNF로 grammar 나타내기
+2. Grammar Transformations
+	- Left factorization and left recursion elimination
+3. Parser class 생성
+	- private variable `currentToken`
+	- methods to call the `scanner::accept` and `acceptIt`
+4. EBNF를 RD parser로 바꾸기
+
+private parsing methods 구현:
+- 각 nonterminal마다 `private parseN` 만들기
+
 ## LL Grammars
 
 
