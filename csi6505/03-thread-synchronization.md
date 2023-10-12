@@ -63,7 +63,9 @@ e.g.![[Pasted image 20231011134840.png]]
 #### Bakery Lock
 - 은행의 번호표와 유사. (해외에서는 빵집에서 번호표를 뽑는 곳이 있다.)
 - First-Come-First-Served
-- 
+
+
+- label은 번호표처럼 항상 증가
 
 ### C++ Mutexes
 
