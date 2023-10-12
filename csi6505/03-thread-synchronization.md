@@ -59,10 +59,11 @@ e.g.![[Pasted image 20231011134840.png]]
 - r bound를 걸어 weak livenesss를 막음.
 - 언젠가 진입하지 않고 상한선이 존재
 - r번 overtake 해야함
-- 은행의 번호표와 유사
 
 #### Bakery Lock
-
+- 은행의 번호표와 유사. (해외에서는 빵집에서 번호표를 뽑는 곳이 있다.)
+- First-Come-First-Served
+- 
 
 ### C++ Mutexes
 
