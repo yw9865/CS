@@ -67,6 +67,14 @@ e.g.![[Pasted image 20231011134840.png]]
 
 - label은 번호표처럼 항상 증가
 
+결론
+- 
+- 성능이 좋지 않아서 하드웨어의 atomic support가 필요하다.
+
+
+126p 14에서 그래프가 꺾이는 이유: 2-socket 시스템이라서 한 소켓에 다 로딩한 후 다른 소켓에 실어서 overhead 발생
+
+
 ### C++ Mutexes
 
 
