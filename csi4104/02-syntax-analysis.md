@@ -80,8 +80,13 @@ $$LL \subset LR$$
 ## Top-down parsing (LL)
 - LL grammar는 linear임. + parser construction과 straight forward하게 맞음
 
-## Recursive descent (LL) parser construction
+- production이 common prefix를 공유할 수 있음
+	- 이때는 2개의 토큰을 봐야할 수도 있음.
+	- 혹은 factor out the common prefix
 
+## Recursive descent (LL) parser construction
+**Recursive Descent Parsing**
+- caller-callee relationship
 
 ## LL Grammars
 
