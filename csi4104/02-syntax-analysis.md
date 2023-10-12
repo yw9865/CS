@@ -85,8 +85,14 @@ $$LL \subset LR$$
 	- 혹은 factor out the common prefix
 
 ## Recursive descent (LL) parser construction
-**Recursive Descent Parsing**
-- caller-callee relationship
+#### Recursive Descent Parsing
+**Key Idea**
+- parser tree structure <-> caller-callee relationship of parsing procedures that call each other at runtime
+
+*example*
+![[Pasted image 20231012152017.png]]
+- 5개의 non-terminal -> 5개의 parsing routine
+- 
 
 ## LL Grammars
 
