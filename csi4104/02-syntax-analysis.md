@@ -92,7 +92,35 @@ $$LL \subset LR$$
 *example*
 ![[Pasted image 20231012152017.png]]
 - 5개의 non-terminal -> 5개의 parsing routine
-- 
+```java
+public class MicroEnglishParser {
+	private Token currentToken;
+
+	private void accept(Token expectedToken) {
+		if (currentToken == expectedToken)
+			currentToken = scanner.scan();
+		else
+			report a syntax error
+	}
+
+	private void parserSentence() {
+		parseSubject();
+		parseVerb();
+		parseObject();
+		accept('.');
+	}
+
+	private void parseSubject() {
+		if (currentToken == 'I')
+			accept('I');
+		else if (currentToken == 'a') {
+			accept('a');
+			parseNoun();
+		}
+		...	
+	}
+}
+```
 
 ## LL Grammars
 
