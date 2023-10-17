@@ -49,5 +49,20 @@ if (currentToken.kind != Token.the)
 ![[Pasted image 20231017163508.png]]
 - Java method는 일어나는 exception을 리스트화해야한다.
 - exception은 method의 `throws` clause에 리스트화된다.
-- `Error`와 `RuntimeException` class는 
+- `Error`와 `RuntimeException` class는 **unchecked exception**이 될 수 있고 이는 리스트화되지 않는다
+	- not verified by the compiler
 
+## Exception이 없다면
+```c
+int foo(FILE *f) {
+	if (!f) return -1;
+	return value;
+}
+```
+- C처럼 error handling code를 중간에 끼워 넣어야한다.
+	- 지저분해보임
+	- 잊기 쉬움
+ ![[Pasted image 20231017164804.png]]
+- RD parser에서 유용하다
+	- recursive하게 얽히는 RD parser에서 매 method마다 if condition으로 error handling을 하지 않아도 된다.
+	- `try-catch`를 사용하면 `catch`가 나올 때까지 backpropagate되기 때문에 편하다.

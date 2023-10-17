@@ -1,3 +1,4 @@
+# 2. Syntax Analysis 
 #Resource/CS #Resource #compiler #CFG #syntax #csi4104 
 
 # Syntax and Semantics of Programming Languages
@@ -139,6 +140,10 @@ private parsing methods 구현:
 	1.  첫 번째 token을 scanner에서 받음
 	2. call `parseS`. S는 start symbol
 	3. `parseS()`가 return하는 모든 token이 comsume되는 걸 보장해야함. 
+
+
+Error reporter를 try-catch를 이용해 만들 수 있다.
+
 ## LL Grammars
 
 
