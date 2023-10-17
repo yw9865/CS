@@ -23,4 +23,22 @@
 - exception이 예상되는 block
 
 `catch`
-- 
+- `try`문에서 발생한 exception에 따라 실행할 block
+
+`finally`
+- **exception의 발생 여부와 관계없이** 실행됨.
+- 심지어 `try`나 `catch` block에서 `return`이 실행되어도 `finally`문이 실행됨o
+
+### Throwing of Exceptions Programmatically
+```java
+if (currentToken.kind != Token.the)
+	throw (new SyntaxError("Article expected!"));
+```
+- `throw`를 사용하여 **programmatically** 하게 exception을 throw/raise할 수 있다.
+	- JVM이 `SyntaxError` exception object를 instantiate하고 throw함.
+
+#### Propagation of Exceptions
+![[Pasted image 20231017162847.png]]
+- method가 catch-block이 없는 경우,
+	- me
+	- exception은 caller에게 propagated back됨
