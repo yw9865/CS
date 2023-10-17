@@ -40,5 +40,14 @@ if (currentToken.kind != Token.the)
 #### Propagation of Exceptions
 ![[Pasted image 20231017162847.png]]
 - method가 catch-block이 없는 경우,
-	- me
+	- method가 종료됨
 	- exception은 caller에게 propagated back됨
+	- caller도 없는 경우 caller가 종료되고 caller의 caller에게 exception 전달됨
+-  global scope에서 `catch` block이 없으면 프로그램이 종료됨
+
+## Exception Class Hierarchy
+![[Pasted image 20231017163508.png]]
+- Java method는 일어나는 exception을 리스트화해야한다.
+- exception은 method의 `throws` clause에 리스트화된다.
+- `Error`와 `RuntimeException` class는 
+
