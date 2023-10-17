@@ -135,7 +135,10 @@ public class MicroEnglishParser {
 
 private parsing methods 구현:
 - 각 nonterminal마다 `private parseN` 만들기
-
+- `public parse` method 구현
+	1.  첫 번째 token을 scanner에서 받음
+	2. call `parseS`. S는 start symbol
+	3. `parseS()`가 return하는 모든 token이 comsume되는 걸 보장해야함. 
 ## LL Grammars
 
 
