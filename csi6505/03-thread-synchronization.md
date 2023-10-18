@@ -99,7 +99,7 @@ e.g.![[Pasted image 20231011134840.png]]
 ### Test-And-Set Lock
 - single flag field per lock
 - **Atomically** acquire lock + set flag (false -> true)
-- 
+- return whether it was already set before the call
 - Reset flag to unlock
 - 성능이 안 좋음
 
