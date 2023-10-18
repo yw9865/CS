@@ -134,7 +134,9 @@ void unlock() {
 	locked = false;
 }
 ```
-- 이전과 차이점은 ca
+- 이전과 차이점은 각 코어의 캐시가 locked value를 갖고 있다가 modified 되는 것.
+	- lock을 캐시에 유지하다가 한 코어가 unlock하게 되면 lock value가 바뀜
+	- 캐시에 lock이 바뀌게 되면 `lock`을 가진 다른 캐시는 모두 drop하고 update함 
 
 ![[Pasted image 20231018144301.png]]
 
