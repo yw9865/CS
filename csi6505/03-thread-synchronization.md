@@ -77,13 +77,22 @@ e.g.![[Pasted image 20231011134840.png]]
 
 ## C++ Mutexes
 - C++11부터 멀티스레딩이 추가됨
-- C++17은 lock library를 제공
+- C++17은 다양한 lock library를 제공
 	- `std::mutex`
 	- `std::lockguard`
 	- `std::scoped_lock`
 	- `std::recursive_mutex` : helps to prevent self-deadlocks
 	- `std::shared_mutex` (since C++17)
-	- 
+	- `std::shared_timed_mutex` (since C++14) 
+
+#### `std::lock_guard`
+![[Pasted image 20231018131703.png]]
+**Basic lock ownership wrapper**
+- RAII (Resource Acquisition Is Initialization) 방식으로 resouce의 소유를 object의 lifetime동안으로 묶음.
+- Object가 release되면 lock도 unlock됨
+- #3, #4 의 mutual exclusion을 위해
+	- constructor에 mutex 제공
+	- destruction에 mutex unlock
 
 
 ### Locks Using Atomic Operations
