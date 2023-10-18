@@ -97,11 +97,22 @@ e.g.![[Pasted image 20231011134840.png]]
 
 ## Locks Using Atomic Operations
 ### Test-And-Set Lock
+```cpp
+bool locked = false; // atomic register
+
+void lock() {
+	while (test_and_set(&locked));
+}
+
+void unlock() {
+	locked = false;
+}
+```
 - single flag field per lock
 - **Atomically** acquire lock + set flag (false -> true)
 - return whether it was already set before the call
 - Reset flag to unlock
-- 성능이 안 좋음
+- 성능이 안 좋음 -> cash 문제
 
 ## Locks with Condition Variables
 
