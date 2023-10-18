@@ -117,8 +117,9 @@ void unlock() {
 - 성능이 안 좋음 -> cash 문제
 	- test-and-set call이 다른 코어 cash에 복사된 값을 무효화함
 	- High contention on memory interconnect
-	 - 근본적인 문제임!
+	 - **근본적인 문제임!**
 
+### Test-And-Test-And-Set Lock
 ```cpp
 volatile bool locked = false; // atomic register
 
@@ -133,7 +134,9 @@ void unlock() {
 	locked = false;
 }
 ```
+- 이전과 차이점은 ca
 
+![[Pasted image 20231018144301.png]]
 
 ## Locks with Condition Variables
 
