@@ -75,7 +75,15 @@ e.g.![[Pasted image 20231011134840.png]]
 126p 14에서 그래프가 꺾이는 이유: 2-socket 시스템이라서 한 소켓에 다 로딩한 후 다른 소켓에 실어서 overhead 발생
 
 
-### C++ Mutexes
+## C++ Mutexes
+- C++11부터 멀티스레딩이 추가됨
+- C++17은 lock library를 제공
+	- `std::mutex`
+	- `std::lockguard`
+	- `std::scoped_lock`
+	- `std::recursive_mutex` : helps to prevent self-deadlocks
+	- `std::shared_mutex` (since C++17)
+	- 
 
 
 ### Locks Using Atomic Operations

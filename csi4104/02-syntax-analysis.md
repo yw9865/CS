@@ -45,11 +45,9 @@ $$M::=\alpha~N~\beta \Rightarrow M:== \alpha~X~\beta$$
 - leaves는 모두 terminal
 - Tree는 bottom-up으로 읽음.
 
-
 #### Ambiguous Grammars
 - operator precedence
 - Operator associativity
-
 - 한 sentence에서 여러 개의 parse tree가 나타날 수 있다.
 - 이떄 parse tree 간 의미하는 바가 달라질 수 있다.
 	- e.g) $(a*b)+c$ or $a *(b +c)$
