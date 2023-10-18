@@ -95,13 +95,18 @@ e.g.![[Pasted image 20231011134840.png]]
 	- destruction에 mutex unlock
 
 
-### Locks Using Atomic Operations
+## Locks Using Atomic Operations
+### Test-And-Set Lock
+- single flag field per lock
+- **Atomically** acquire lock + set flag (false -> true)
+- 
+- Reset flag to unlock
+- 성능이 안 좋음
+
+## Locks with Condition Variables
 
 
-### Locks with Condition Variables
+## Lock contention & Lock Granuality
 
 
-### Lock contention & Lock Granuality
-
-
-### Barriers
+## Barriers
