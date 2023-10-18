@@ -109,10 +109,31 @@ void unlock() {
 }
 ```
 - single flag field per lock
-- **Atomically** acquire lock + set flag (false -> true)
-- return whether it was already set before the call
+- Acquire lock by **atomically** settting flag (false -> true)
+- Read & Write
+	- Read the flag: return whether it was already set before the call
+	- Write the flag: set flag (false -> true)
 - Reset flag to unlock
 - 성능이 안 좋음 -> cash 문제
+	- test-and-set call이 다른 코어 cash에 복사된 값을 무효화함
+	- High contention on memory interconnect
+	 - 근본적인 문제임!
+
+```cpp
+volatile bool locked = false; // atomic register
+
+void lock() {
+	do {
+		while (locked);
+		if (!test_and_set(&locked)) return;
+	while (true);
+}
+
+void unlock() {
+	locked = false;
+}
+```
+
 
 ## Locks with Condition Variables
 
