@@ -159,13 +159,25 @@ p.73
 
 p.74
 
-Generality
+#### Generality
 
 e.g.
-$$\set{a^n0b^n |n\ge1}\uni$$
+$$\set{a^n0b^n |n\ge1}~\cup~\set{a^n1b^{2n}|n\ge1}$$
 $S::=aZb ~|~ aObb$
 $Z::=aZb ~|~ 0$
 $O::=aObb~|~1$
+
+#### FIRST
+- 
+
+e.g.
+X::= Y1Y2Y3 ... Yk
+First(X) = ... 
+	FIrst(Y1) - \epslion  (Rule 3 (a))
+	if y1 ->* \epsilon then X::=Y2Y3...Yk
+	if y2 ->* epsilon then 
+	...
+	if y1,y2,y3,...,yk
 
 # AST Construction
 
