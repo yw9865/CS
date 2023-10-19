@@ -141,7 +141,7 @@ void unlock() {
 	- 캐시에 lock이 바뀌게 되면 `lock`을 가진 다른 캐시는 모두 drop하고 update함 
  - 다른 스레드가 `lock`을 read하고 있음.
  - 하지만 TTAS 역시 unlock되는 순간 모든 캐시라인이 drop되는 invalidation storm 문제가 있음
-
+	- 캐시 드롭 이후 캐시 미스가 일어나며 다른 스레드가 TTAS가 아닌 TAS를 다시 시도함. 
 ![[Pasted image 20231018144301.png]]
 
 ### MESI intermezzo
@@ -159,6 +159,16 @@ Events
 
 Event details
 - PrWr: processor write
+
+#### Quiescence Time
+next time
+**quiescence time**: Invalidation storm 이후 (traffic burst) 정상적으로 test-and-set이 되기까지의 시간
+
+
+### Exponential Backoff
+
+
+
 
 ## Locks with Condition Variables
 
