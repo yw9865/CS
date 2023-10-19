@@ -142,7 +142,14 @@ private parsing methods 구현:
 Error reporter를 try-catch를 이용해 만들 수 있다.
 
 ## LL Grammars
+- **L**eft-to-right parsing 
+- **L**eftmost derivation
+- **1** token look-ahead in the input stream
 
+**Properties**
+- NOT containing left-recursion
+- NOT containing common prefixes
+- NOT ambiguous grammar
 
 # AST Construction
 
