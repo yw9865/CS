@@ -146,10 +146,17 @@ Error reporter를 try-catch를 이용해 만들 수 있다.
 - **L**eftmost derivation
 - **1** token look-ahead in the input stream
 
-**Properties**
+**LL(1) Properties**
 - NOT containing left-recursion
 - NOT containing common prefixes
 - NOT ambiguous grammar
+
+
+
+p.72에서 infinite recursion이 되는 부분이 중요함
+
+
+
 
 # AST Construction
 
