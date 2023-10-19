@@ -155,8 +155,17 @@ Error reporter를 try-catch를 이용해 만들 수 있다.
 
 p.72에서 infinite recursion이 되는 부분이 중요함
 
+p.73
 
+p.74
 
+Generality
+
+e.g.
+$$\set{a^n0b^n |n\ge1}\uni$$
+$S::=aZb ~|~ aObb$
+$Z::=aZb ~|~ 0$
+$O::=aObb~|~1$
 
 # AST Construction
 
