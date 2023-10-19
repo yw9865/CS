@@ -117,7 +117,8 @@ void unlock() {
 - 성능이 안 좋음 -> cash 문제
 	- test-and-set call이 다른 코어 cash에 복사된 값을 무효화함
 	- High contention on memory interconnect
-	 - **근본적인 문제임!**
+	- 캐시끼리 핑퐁 
+	- **근본적인 문제임!**
 
 ### Test-And-Test-And-Set Lock
 ```cpp
@@ -134,11 +135,18 @@ void unlock() {
 	locked = false;
 }
 ```
+- Relies on cache coherence to avoid remote reads while lock held by other thread
 - 이전과 차이점은 각 코어의 캐시가 locked value를 갖고 있다가 modified 되는 것.
 	- lock을 캐시에 유지하다가 한 코어가 unlock하게 되면 lock value가 바뀜
 	- 캐시에 lock이 바뀌게 되면 `lock`을 가진 다른 캐시는 모두 drop하고 update함 
 
 ![[Pasted image 20231018144301.png]]
+
+### MESI intermezzo
+![[Pasted image 20231019161445.png]]
+Modified-Exclusive-Shared-Invalid (MESI)는 x86의 cache coherence protocol
+
+
 
 ## Locks with Condition Variables
 
