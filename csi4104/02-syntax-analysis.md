@@ -174,10 +174,10 @@ e.g.
 X::= Y1Y2Y3 ... Yk
 First(X) = ... 
 	FIrst(Y1) - \epslion  (Rule 3 (a))
-	if y1 ->* \epsilon then X::=Y2Y3...Yk
-	if y2 ->* epsilon then 
+	if y1 ->* \epsilon then X::=Y2Y3...Yk, First(X) = {First(y1)-\epsilon}
+	if y2 ->* epsilon then  X::=Y3...Yk, First(X) = {first(y1)-epsilon, first(y2)-epsilon}
 	...
-	if y1,y2,y3,...,yk
+	if y1,y2,y3,...,yk ->* \epsilon then First(X) = {\epsilon}
 
 # AST Construction
 
