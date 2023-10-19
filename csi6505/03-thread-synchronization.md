@@ -145,8 +145,18 @@ void unlock() {
 ### MESI intermezzo
 ![[Pasted image 20231019161445.png]]
 Modified-Exclusive-Shared-Invalid (MESI)는 x86의 cache coherence protocol
+States
+- Modified
+- Exclusive
+- Shared
+- Invalid
 
+Events
+- Local reads/writes (cache's processor core)
+- Remote reads/writes (Bus)
 
+Event details
+- PrWr: processor write
 
 ## Locks with Condition Variables
 
