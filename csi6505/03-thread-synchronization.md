@@ -161,13 +161,25 @@ Event details
 - PrWr: processor write
 
 #### Quiescence Time
-next time
+**next time**
 **quiescence time**: Invalidation storm 이후 (traffic burst) 정상적으로 test-and-set이 되기까지의 시간
 
 
 ### Exponential Backoff
+- invalidation storm의 해결책
+- lock을 얻는데 실패한 스레드는 랜덤 시간동안 딜레이 시킴
 
+### TAS Summary 
 
+장점
+- Space complexity O(1) for infinite threads
+
+단점
+- memory contention의 문제
+	- 모든 스레드가 single memory location에서 스핀한다
+	- cache coherence traffic
+- backoff에 의해 스레드가 더 오래 기다려야할 수 있음
+- Unfair. not starvation free
 
 
 ## Locks with Condition Variables
