@@ -15,3 +15,14 @@ e.g.
 1. Task parallelism: 스레드로 나눔
 2. Data parallelism: SIMD vectorization
 3. Stream parallelism: Actor code
+
+
+### **Concurrency pattern - Pipeline**
+- large, identical data collection이 처리됨
+- 데이터는 N개의 연속적이고(consecutive) 독립적인(independent) 일(stage)로 나뉠 수 있어야 함.
+=> 각 코어가 한 stage를 일함
+
+- 스테이지 사이에 복사하는 과정이 필요 없음
+	- shared memory에 데이터를 넣고 그 안에서 modification이 순차적으로 일어나기 때문
+- cache-coherence 오버헤드는 데이터 크기에 따라 결정됨
+	- 결코 무시할 수 없음!
