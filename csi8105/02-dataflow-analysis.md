@@ -57,9 +57,17 @@ KILL(BB3): r3, r7, r2 = 새로 이용한, 재정의한 변수
 => BB4에서 쓰이는 r3, r7은 BB3에서 kill되기 때문에 BB1까지 신경쓰지 않고 BB3만 보면 된다.
 
  
-Reaching Definition Analysis (시험엔 안나옴)
+## Reaching Definition Analysis 
+(시험엔 안나옴)
 - Use는 전혀 상관 안하고 definition이 어디까지 도달하는지만 봄
 - c.f. liveness는 가장 마지막 use와 def를 봄
 - kill될 때까지 봄 = 재정의될 때까지 봄
 - 레지스터 수가 적은 시스템에서는 liveness가 훨씬 효율적이지만 reachinng definition은 편하게 찾을 수 있다.
 - **Forward dataflow analysis**를 하기 때문에 훨씬 빠름
+
+
+## DU/UD Chains
+
+DU: Def-Use chain
+UD: Use-Def chain
+
