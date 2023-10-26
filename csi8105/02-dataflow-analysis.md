@@ -26,5 +26,30 @@ e.g. ADD r3, r1, r2 -> r3, (r1,r2) 순으로 봄
 	- GEN, KILL은 BB안에서 정의되는 변수 집합과 같음
 - IN: BB의 entry point에서 들어오는 변수 집합
 - OUT: BB의 exit point에서 나가는 변수 집합
-	- 다른 BB에서 원래 있던 변수를 사용한다면 이 BB의 IN인 거고 다른 어떤 BB에서 OUT으로 
+	- 다른 BB에서 원래 있던 변수를 사용한다면 이 BB의 IN인 거고 다른 어떤 BB에서 OUT에 속해있을 것
+
+### Computing GEN/KILL Sets
+
+Algorithm
+
+```
+for each BB X, do
+	GEN(X) = 0
+	KILL(X) = 0
+	
+```
+
+1. 각 BB 안에서 reverse sequential order로 각 operator를 분석
+2. Operator의 destination들을 분석하면서
+	- `GEN(X) -= dest` - 
+	- `KILL(X) += dest` - 
+3. Operator의 source operand들을 분석하면서
+	- `GEN(X) += src`
+	- `KILL(X) -= src` 
+
+
+
+
+
+ 
 
