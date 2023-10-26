@@ -74,3 +74,8 @@ UD: Use-Def chain
 
 ## Generalizing Dataflow Analysis
 
+
+
+reaching definition : forward로 바뀜
+available def : all path -> meet func영향 -> union이 intersect로 변함
+available exp: 
