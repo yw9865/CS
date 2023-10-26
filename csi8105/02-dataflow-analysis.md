@@ -58,4 +58,8 @@ KILL(BB3): r3, r7, r2 = 새로 이용한, 재정의한 변수
 
  
 Reaching Definition Analysis (시험엔 안나옴)
-- Use는 전
+- Use는 전혀 상관 안하고 definition이 어디까지 도달하는지만 봄
+- c.f. liveness는 가장 마지막 use와 def를 봄
+- kill될 때까지 봄 = 재정의될 때까지 봄
+- 레지스터 수가 적은 시스템에서는 liveness가 훨씬 효율적이지만 reachinng definition은 편하게 찾을 수 있다.
+- **Forward dataflow analysis**를 하기 때문에 훨씬 빠름
