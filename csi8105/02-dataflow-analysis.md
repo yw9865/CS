@@ -28,7 +28,7 @@ e.g. ADD r3, r1, r2 -> r3, (r1,r2) 순으로 봄
 	- `IN = (GEN + (OUT - KILL))` : definition을 찾지 못한 변수
 - OUT: BB의 exit point에서 나가는 변수 집합
 	- 다른 BB에서 원래 있던 변수를 사용한다면 이 BB의 IN인 거고 다른 어떤 BB에서 OUT에 속해있을 것
-
+	- `OUT = Union(IN(succs))`
 ### Computing GEN/KILL Sets
 
 Algorithm
