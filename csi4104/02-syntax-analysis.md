@@ -185,7 +185,15 @@ First(X) = ...
 
 
 #### FOLLOW
-- non terminal
+- non terminal A에 대해 A 옆에 올 수 있는 terminal의 집합
+- $A \to A\alpha$면, FOLLOW(A) = {$\alpha$}
+- terminal은 follow set이 필요 없어서 알고리즘으로 구해지지 않음.
+
+**알고리즘**
+1. FOLLOW(S) = $ (EOF)
+2. if $A ::= \alpha B \beta$:
+3. 
+ 
 
 
 
