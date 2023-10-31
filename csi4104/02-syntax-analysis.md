@@ -192,8 +192,8 @@ First(X) = ...
 **알고리즘**
 1. FOLLOW(S) = $ (EOF)
 2. if $A ::= \alpha B \beta$:
-	1. put FIRST($\beta$) - {$\epsilon$} in FOLLOW(B)
-	2. if $\beta = \epsilon$ ($A::=\alpha B$) or $\epsilon \in FIRST(\beta)$ ($\beta \to^* \epsilon$), then put FOLLOW(A) in FOLLOW(B) 
+		a. put FIRST($\beta$) - {$\epsilon$} in FOLLOW(B)
+		b. if $\beta = \epsilon$ ($A::=\alpha B$) or $\epsilon \in FIRST(\beta)$ ($\beta \to^* \epsilon$), then put FOLLOW(A) in FOLLOW(B) 
 
 Step 2에서 추가가 안될 때까지 반복
 
