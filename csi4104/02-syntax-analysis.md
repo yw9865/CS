@@ -154,7 +154,7 @@ Error reporter를 try-catch를 이용해 만들 수 있다.
 #### Predictive Parsing (Recursive Descent Parsing)
 어떤 production이든 $A\to \alpha | \beta$ 면 
 $$ FIRST(\alpha) \cap FIRST(\beta) = \emptyset$$
-
+- 이런 점이 parser가 옳은 production을 하나의 lookahead로도 예측할 수 있게 함.
 
 
 p.72에서 infinite recursion이 되는 부분이 중요함
