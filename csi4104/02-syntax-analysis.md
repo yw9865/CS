@@ -183,6 +183,12 @@ First(X) = ...
 	...
 	if y1,y2,y3,...,yk ->* \epsilon then First(X) = {\epsilon}
 
+
+#### FOLLOW
+- non terminal
+
+
+
 # AST Construction
 
 
