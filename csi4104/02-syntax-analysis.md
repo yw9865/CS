@@ -151,6 +151,10 @@ Error reporter를 try-catch를 이용해 만들 수 있다.
 - NOT containing common prefixes
 - NOT ambiguous grammar
 
+#### Predictive Parsing (Recursive Descent Parsing)
+어떤 production이든 $A\to \alpha | \beta$ 면 
+$$ FIRST(\alpha) \cap FIRST(\beta) = \emptyset$$
+
 
 
 p.72에서 infinite recursion이 되는 부분이 중요함
