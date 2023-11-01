@@ -261,8 +261,14 @@ void init_thread() {
 - TATAS가 TAS보다 초기에 느린 걸 볼 수 있음.
 - 그러므로 꼭 각자의 환경에서 측정해야함!
 - 14 core에서 성능이 변하는 이유는 15 core가 되면서 두 번째 socket을 사용하기 때문.
+	- 사용하는 socket이 늘어나면 cache 통일성을 맞추기 위해 소켓을 넘나들기 때문에 시간이 더 오래 걸린다.
 - Arraylock이 CLHQueueLock에 비해 14-15 core에서 더 큰 성능 저하를 보이는 이유는 fetch-add가 exchange보다 더 오래 걸리는 작업이기 때문. 
+
 ## Locks with Condition Variables
+- 지금까지는 CPU cycle을 소모하는 lock을 사용했음.
+
+
+
 
 
 ## Lock contention & Lock Granuality
