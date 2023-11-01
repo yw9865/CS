@@ -161,9 +161,8 @@ Event details
 - PrWr: processor write
 
 #### Quiescence Time
-**next time**
 **quiescence time**: Invalidation storm 이후 (traffic burst) 정상적으로 test-and-set이 되기까지의 시간
-
+- quiescence time은 thread의 개수만큼 선형적으로 증가한다. -> 좋지 않음.
 
 ### Exponential Backoff
 - invalidation storm의 해결책
