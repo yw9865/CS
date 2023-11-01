@@ -204,7 +204,7 @@ class Backoff {
 	- c.f.) true sharing: 실제로 한 변수를 다른 캐시끼리 공유.
 => padding으로 해결: flag를 넣고 남는 캐시라인에 dummy data를 채워넣어서 한 캐시라인에 한 flag만 담기도록 함.
 
-#### Padding
+#### Padding - Force thread-private data into seperate cache lines
 - C++11에 `alignas` attribute를 사용하면 `struct`를 메모리에 맞춰서 쓰도록할 수 있음.
 - speed-space trade-off
 ```cpp
@@ -220,8 +220,24 @@ aligned_flag flags[...]; // Must initialize like flags[] = {true, false, ...}
 ```
 
 ### CLH Queue Lock
+- Developed by Craig, Landin, Hagersten
+- Linked list
+- Single sentinel node
+- Spin on locked flag of previous node
 
+```cpp
+Node *tail = new Node();
+tail->locked = false; // unlocked
+thread_local Node *node;
 
+void lock() {
+	node = new Node();
+	node->locked = true;
+	node->pred = exchange(&tail, node);
+	while (node->pred->locked)
+}
+```
+- `node->pred`를 설정하는 과정은 atomic일 필요 없음.
 
 
 ## Locks with Condition Variables
