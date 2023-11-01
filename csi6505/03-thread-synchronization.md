@@ -167,6 +167,19 @@ Event details
 ### Exponential Backoff
 - invalidation storm의 해결책
 - lock을 얻는데 실패한 스레드는 랜덤 시간동안 딜레이 시킴
+	- 모든 스레드가 동일한 시간동안 딜레이되면 invalidation storm이 생길 수 있기 때문
+- 또 실패하면 기다리는 시간이 2배로 늘어남
+```cpp
+class Backoff {
+	int limit = MIN_DELAY;
+
+	void backoff() {
+		int delay = rnd() % limit; // delay with random number
+		limit = min(MAX_DELAY, limit*2); // increase delay 2 times
+		sleep(delay);
+	}
+}
+```
 
 ### TAS Summary 
 
@@ -179,6 +192,9 @@ Event details
 	- cache coherence traffic
 - backoff에 의해 스레드가 더 오래 기다려야할 수 있음
 - Unfair. not starvation free
+
+### Array Lock
+- First come - first served
 
 
 ## Locks with Condition Variables
