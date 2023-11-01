@@ -233,12 +233,27 @@ thread_local Node *node;
 void lock() {
 	node = new Node();
 	node->locked = true;
-	node->pred = exchange(&tail, node);
-	while (node->pred->locked)
+	node->pred = exchange(&tail, node); // node->pred = tail, tail = node
+	while (node->pred->locked) {;}
+}
+
+void unlock() {
+	delete node->pred;
+	node->locked = false;
 }
 ```
 - `node->pred`를 설정하는 과정은 atomic일 필요 없음.
+- c++11은 thread-local variable을 지원
+```cpp
+alignas(CACHELINE_SIZE) thread_locak Node *node = nullptr;
+// Thread-local global variable.
+// Each thread has its private copy.
 
+void init_thread() {
+	node = (Node *) aligned_alloc (CACHELINE_SIZE, sizeof(Node));
+}
+```
+- Heap에 같은 cache line에 node가 할당되는 것을 막기 위해 `aligned_alloc`을 지원함.
 
 ## Locks with Condition Variables
 
