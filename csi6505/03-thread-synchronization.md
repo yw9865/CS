@@ -255,6 +255,13 @@ void init_thread() {
 ```
 - Heap에 같은 cache line에 node가 할당되는 것을 막기 위해 `aligned_alloc`을 지원함.
 
+### Performance of Locks
+지금까지 배운 lock들을 각자의 환경에서 꼭 테스트 해보고 사용해야한다. 절대적으로 좋은 lock은 없음
+![[Pasted image 20231101142321.png]]
+- TATAS가 TAS보다 초기에 느린 걸 볼 수 있음.
+- 그러므로 꼭 각자의 환경에서 측정해야함!
+- 14 core에서 성능이 변하는 이유는 15 core가 되면서 두 번째 socket을 사용하기 때문.
+- Arraylock이 CLHQueueLock에 비해 14-15 core에서 더 큰 성능 저하를 보이는 이유는 fetch-add가 exchange보다 더 오래 걸리는 작업이기 때문. 
 ## Locks with Condition Variables
 
 
