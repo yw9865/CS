@@ -195,7 +195,10 @@ class Backoff {
 
 ### Array Lock
 - First come - first served
-
+- 각 스레드가 각자의 flag에서 spin. (own L1 cache)
+	=> invalidation storm은 없다
+- lock하면 자기 slot이 true여야만 진행 가능.
+- unlock 하면 자기 slot을 false로 바꾸고 다음 slot을 true로 바꿈.
 
 ## Locks with Condition Variables
 
