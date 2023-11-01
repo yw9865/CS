@@ -268,8 +268,71 @@ void init_thread() {
 - 지금까지는 CPU cycle을 소모하는 lock을 사용했음.
 
 
+### Producer-Consumer Synchronization
+- Producer (thread)는 data를 enqueue
+- Consumer (thread)는 data를 dequeue
+- First Idea: `data_avail` 변수가 1이면 non empty, 0이면 empty queue
 
+#### Without Condition Variables
+```cpp
+//shared global variables:
+int data_avail = 0;
+pthread_mutex_t data_mutex = PTHREAD_MUTEX_INITIALIZER;
 
+void *producer(void *) {
+	Produce data...
+	pthread_mutex_lock(&data_mutex);
+
+	Insert data into queue if queue is not full;
+	// Tell consumer that data is available:
+	data_avail = 1;
+
+	pthread_mutex_unlock(&data_mutex);
+}
+
+void consumerProcessItem(void) {
+	int GotItem = 0;
+	while (GotItem == 0) {
+		pthread_mutex_lock(&data_mutex);
+		if (data_avail == 1) {
+			Fetch_data_item_from_queue();
+			if (queue is empty)
+				data_avail = 0;
+			GotItem = 1;
+		}
+		pthread_mutex_unlock(&data_mutex);
+	}
+	consume_data();
+}
+```
+- consumer가 변수를 계속 참고함
+- 대신 producer가 queue가 찼다면 consumer에게 알리도록 하자.
+
+#### With Condition Variable
+```cpp
+//shared global variables:
+int data_avail = 0;
+pthread_mutex_t data_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_cont_t notEmpty = PTHREAD_COND_INITIALIZER; // new
+
+void *producer(void *) {
+	Produce data...
+	pthread_mutex_lock(&data_mutex);
+
+	Insert data into queue if queue is not full;
+	// Tell consumer that data is available:
+	data_avail = 1;
+
+	pthread_cond_broadcast(&notEmpty); // new
+	pthread_mutex_unlock(&data_mutex);
+}
+
+void consumerProcessItem(void) {
+	int GotItem = 0;
+	}
+	consume_data();
+}
+```
 
 ## Lock contention & Lock Granuality
 
