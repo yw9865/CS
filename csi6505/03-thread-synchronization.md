@@ -204,7 +204,9 @@ class Backoff {
 	- c.f.) true sharing: 실제로 한 변수를 다른 캐시끼리 공유.
 => padding으로 해결: flag를 넣고 남는 캐시라인에 dummy data를 채워넣어서 한 캐시라인에 한 flag만 담기도록 함.
 
-C++11에 `alignas` attribute를 사용하면 `struct`를 메모리에 맞춰서 쓰도록할 수 있음.
+#### Padding
+- C++11에 `alignas` attribute를 사용하면 `struct`를 메모리에 맞춰서 쓰도록할 수 있음.
+- speed-space trade-off
 ```cpp
 #include <atomic>
 
@@ -216,6 +218,9 @@ struct alignas(CACHELINE_SIZE) aligned_flag {
 
 aligned_flag flags[...]; // Must initialize like flags[] = {true, false, ...}
 ```
+
+### CLH Queue Lock
+
 
 
 
