@@ -229,5 +229,8 @@ AST grows to right... (p.112)
 	- 남아있는 `StmtSequence`가 됨
 - `return new StmtSequence (S, Remainder);`
 
+## Parser Generators
+![[Pasted image 20231107174159.png]]
+| Tool | acc
 
 # Chomsky’s Hierarchy
