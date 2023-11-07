@@ -209,5 +209,17 @@ Step 2에서 추가가 안될 때까지 반복
 #### Assignment3
 - compound statement: multiple statement wrapped by { }, e.g. loop body, condition body, or procedure
 
+```java
+public class AssignStmt extends Stmt {
+	public Expr lAST;  // L-value of the assignment.
+	public Expr rAST;  // R-value (what to assign to the L-value).
+}
+```
+- `Expr` 클래스로 선언해도 `VarExpr`, `ArrayExpr` 등 모두 child class라서 묹
+- lAST와 rAST로 나뉘긴 하지만 단순히 left handside, right-handside만을 의미하지 않는다.
+	- lAST: 주로 저장할 메모리 주소가 담기게 된다.
+	- rAST: 저장할 값이 담김
+	- e.g.) `a=2+1` : `a`: 저장되는 주소, `2+1` 저장할 값
+
 
 # Chomsky’s Hierarchy
