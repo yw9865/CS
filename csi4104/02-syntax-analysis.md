@@ -231,6 +231,13 @@ AST grows to right... (p.112)
 
 ## Parser Generators
 ![[Pasted image 20231107174159.png]]
-| Tool | acc
+| ------ | ---------------- | ---------------------------------------------------- |
+| Tool | accepted Grammar | generated parsers and their implementation languages |
+| ------ | ---------------- | ---------------------------------------------------- |
+| JavaCC | LL(k) EBNF | Java RD LL(1) with some LL(k) portions |
+| COCO/R | LL(k) EBNF | Pascal, C, C++, JAVA ect RD LL(1) |
+| ANTLR | Predicated LL(k) | C, C++, Python, Go, Java RD LL(k) |
+| ------ | ---------------- | ---------------------------------------------------- |
+
 
 # Chomsky’s Hierarchy
