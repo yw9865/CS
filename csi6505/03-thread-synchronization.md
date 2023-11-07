@@ -328,11 +328,25 @@ void *producer(void *) {
 }
 
 void consumerProcessItem(void) {
-	int GotItem = 0;
+	pthread_mutex_lock(&data_mutex);
+
+	while (data_avail == 0) {
+		pthread_cond_wait(&notEmpty, &data_mutex);
 	}
+
+	// woken up, execute critical section:
+	Extract data from queue;
+	if (queue is empty)
+		data_avail = 0;
+	
+	pthread_mutex_unlock(&data_mutex);
+	
 	consume_data();
 }
 ```
+- 
+
+
 
 ## Lock contention & Lock Granuality
 
