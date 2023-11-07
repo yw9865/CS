@@ -222,4 +222,12 @@ public class AssignStmt extends Stmt {
 	- e.g.) `a=2+1` : `a`: 저장되는 주소, `2+1` 저장할 값
 
 
+AST grows to right... (p.112)
+- `Stmt S = parseStmt();` : `Stmtsequence` 에서 `CompoundDecls`가 됨.
+	- `Assignment`가 들어감
+- `Stmt Remainder = parseCompoundStmts();`
+	- 남아있는 `StmtSequence`가 됨
+- `return new StmtSequence (S, Remainder);`
+
+
 # Chomsky’s Hierarchy
