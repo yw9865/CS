@@ -207,6 +207,7 @@ Step 2에서 추가가 안될 때까지 반복
 
 
 #### Assignment3
+- compound statement: multiple statement wrapped by { }, e.g. loop body, condition body, or procedure
 
 
 # Chomsky’s Hierarchy
