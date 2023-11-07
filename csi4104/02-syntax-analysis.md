@@ -215,7 +215,7 @@ public class AssignStmt extends Stmt {
 	public Expr rAST;  // R-value (what to assign to the L-value).
 }
 ```
-- `Expr` 클래스로 선언해도 `VarExpr`, `ArrayExpr` 등 모두 child class라서 묹
+- `Expr` class로 선언해도 `VarExpr`, `ArrayExpr` 등 모두 child class라서 문제 없음
 - lAST와 rAST로 나뉘긴 하지만 단순히 left handside, right-handside만을 의미하지 않는다.
 	- lAST: 주로 저장할 메모리 주소가 담기게 된다.
 	- rAST: 저장할 값이 담김
