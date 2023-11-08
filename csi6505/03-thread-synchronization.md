@@ -355,3 +355,16 @@ void consumerProcessItem(void) {
 
 
 
+### C++20 barrier
+```cpp
+const auto workers = {"A", "B", "C"};
+
+auto on_completion = []() 
+```
+**completion**: 모든 스레드가 배리어에 도달했을 때 표시하는 specification 지원
+`auto work = [&](std::string name) {`
+- 여기서 `[&]`는 `std::barrier sync_point`를 reference로 가져오기 위함. 
+	- 없으면 copy value로 가져와서 각 스레드가 barrier의 복사본을 가져 영원히 다른 스레드를 기다릴 것. 
+- `std::barrier`는 한번 선언하고 여러 번 사용 가능하다. 
+- `std::latch`는 선언하면 한번만 사용 가능하다.
+
