@@ -269,4 +269,7 @@ Note
 
 **Limitations of Context-Free Grammars**
 
-- 
+- $L=\{ wcw | w \text{ is in } (a|b)^*\}$
+	- df
+- $L = \{ a^nb^mc^nd^m ~| n \ge 1, m \ge 1 \}$
+	- 
