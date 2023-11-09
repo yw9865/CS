@@ -241,3 +241,11 @@ AST grows to right... (p.112)
 
 
 # Chomsky’s Hierarchy
+
+| Grammar | Name                       | Definition                               |           |
+| ------- | -------------------------- | ---------------------------------------- | --------- |
+| Type 0  | unrestricted grammars      | $\gamma \to \alpha$ no constraints       |           |
+| Type 1  | context-sensitive grammars | $\alpha A \beta \to \alpha \gamma \beta$ |           |
+| Type 2  | context-free grammars      | $A \to \alpha$                           |           |
+| Type 3  | regular grammars           | $A \to \bar \alpha                            | \alpha B$ |
+
