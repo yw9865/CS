@@ -242,10 +242,31 @@ AST grows to right... (p.112)
 
 # Chomsky’s Hierarchy
 
-| Grammar | Name                       | Definition                               |           |
-| ------- | -------------------------- | ---------------------------------------- | --------- |
-| Type 0  | unrestricted grammars      | $\gamma \to \alpha$ no constraints       |           |
-| Type 1  | context-sensitive grammars | $\alpha A \beta \to \alpha \gamma \beta$ |           |
-| Type 2  | context-free grammars      | $A \to \alpha$                           |           |
-| Type 3  | regular grammars           | $A \to \bar \alpha                            | \alpha B$ |
+![[Pasted image 20231109151429.png]]
 
+| Grammar | Name                       | Definition |
+| ------- | -------------------------- | ------- | 
+| Type 0  | unrestricted grammars      | $\gamma \to \alpha$ no constraints |          
+| Type 1  | context-sensitive grammars | $\alpha A \beta \to \alpha \gamma \beta$ |           
+| Type 2  | context-free grammars      | $A \to \alpha$                           |           
+| Type 3  | regular grammars           | $A \to \alpha \| \alpha B$ |
+
+Note
+
+- $a$ is a terminal symbol
+- $A$ and $B$ are single non-terminal
+- $\alpha$, $\beta$ are strings of terminals and/or non-terminals. may be empty
+- $\gamma$ is string of terminals and/or non-terminals. never empty
+
+**Limitations of Regular Grammars**
+
+- nested construct가 불가능
+- Regular language는 아니지만 context free인 언어 존재
+	e.g.) 
+	- $L=\{ a^nb^n | n \ge 0 \}$
+	- $S \to \epsilon | a S b$
+- count할 수 없음
+
+**Limitations of Context-Free Grammars**
+
+- 
