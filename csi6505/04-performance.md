@@ -24,4 +24,13 @@ Limits to Performace Scalability
 
 ### False sharing case study
 
+Thread-private data
+
+Padding
+
+
+Thread local variable and only add partial sum to global total_sum variable
+- 심지어 이러면 gcc가 loop를 보고 SI
+
+
 ### The 4 sources of performance loss
