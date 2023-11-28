@@ -231,7 +231,7 @@ AST grows to right... (p.112)
 
 ## Parser Generators
 ![[Pasted image 20231107174159.png]]
-| ------ | ---------------- | ---------------------------------------------------- |
+
 | Tool | accepted Grammar | generated parsers and their implementation languages |
 | ------ | ---------------- | ---------------------------------------------------- |
 | JavaCC | LL(k) EBNF | Java RD LL(1) with some LL(k) portions |
