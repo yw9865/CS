@@ -29,5 +29,7 @@ Scope stack TODO
 - declaration이 없으면 `nullptr` 반환
 
 
+`scopeStack.openScope()`: 
+
 
 ### 2. Type checking
