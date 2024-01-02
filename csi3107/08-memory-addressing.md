@@ -1,5 +1,5 @@
 # Lecture 8: Memory Addressing
-#Resource #Resource/CS #csi3107 #system-programming #linux #memory
+#resource #resource/CS #csi3107 #system-programming #linux #memory
 
 - 목차
 

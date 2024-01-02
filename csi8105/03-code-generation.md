@@ -1,5 +1,5 @@
 # 03 Code Generation
-#Resource #Resource/CS #compiler #ir #dependence #slack
+#resource #resource/CS #compiler #ir #dependence #slack
 
 
 

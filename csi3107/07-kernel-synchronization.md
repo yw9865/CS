@@ -1,5 +1,5 @@
 # Lecture 7: Kernel Synchronization
-#Resource #Resource/CS #csi3107 #system-programming #linux #synchronize #semaphore #spinlock #interrupt #mutex
+#resource #resource/CS #csi3107 #system-programming #linux #synchronize #semaphore #spinlock #interrupt #mutex
 
 - 목차
 

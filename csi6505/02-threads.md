@@ -1,5 +1,5 @@
 # Threads
-#Resource #Resource/CS #multicore #thread #parallelism 
+#resource #resource/CS #multicore #thread #parallelism 
 
 
 

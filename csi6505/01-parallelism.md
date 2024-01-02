@@ -1,5 +1,5 @@
 # Parallelism
-#multicore #parallelism #Resource #Resource/CS 
+#multicore #parallelism #resource #resource/CS 
 
 
 1. Task parallelism: executing different task

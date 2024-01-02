@@ -1,5 +1,5 @@
 # 3. Semantic Analysis
-#Resource/CS #Resource #compiler #CFG #semantic #csi4104 #AST
+#resource/CS #resource #compiler #CFG #semantic #csi4104 #AST
 
 ## Overview
 

@@ -1,5 +1,5 @@
 # 2. Syntax Analysis 
-#Resource/CS #Resource #compiler #CFG #syntax #csi4104 
+#resource/CS #resource #compiler #CFG #syntax #csi4104 
 
 # Syntax and Semantics of Programming Languages
 

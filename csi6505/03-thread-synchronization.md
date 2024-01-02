@@ -1,5 +1,5 @@
 # Thread Synchronization
-#Resource #Resource/CS #thread #synchronize #mutex #spinlock #atomic #multicore 
+#resource #resource/CS #thread #synchronize #mutex #spinlock #atomic #multicore 
 
 ### Race conditions
 
@@ -88,7 +88,7 @@ e.g.![[Pasted image 20231011134840.png]]
 #### `std::lock_guard`
 ![[Pasted image 20231018131703.png]]
 **Basic lock ownership wrapper**
-- RAII (Resource Acquisition Is Initialization) 방식으로 resouce의 소유를 object의 lifetime동안으로 묶음.
+- RAII (resource Acquisition Is Initialization) 방식으로 resouce의 소유를 object의 lifetime동안으로 묶음.
 - Object가 release되면 lock도 unlock됨
 - #3, #4 의 mutual exclusion을 위해
 	- constructor에 mutex 제공

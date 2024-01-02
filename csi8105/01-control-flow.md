@@ -1,5 +1,5 @@
 # Control Flow
-#Resource #CS #csi8105 #compiler #Resource/CS 
+#resource #CS #csi8105 #compiler #resource/CS 
 
 **Index**
 1. Control transfer

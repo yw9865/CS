@@ -1,5 +1,5 @@
 # Lexical Analysis
-#Resource #csi4104 #CS #Resource/CS #compiler 
+#resource #csi4104 #CS #resource/CS #compiler 
 #### Taxanomy
 
 * Token: maps stream of characters into words

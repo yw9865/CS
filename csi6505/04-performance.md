@@ -1,5 +1,5 @@
 # 04. Performance of Parallel Programs
-#Resource #Resource/CS #thread #multicore #performance 
+#resource #resource/CS #thread #multicore #performance 
 
 ## The fundamental laws of parallelism
 
