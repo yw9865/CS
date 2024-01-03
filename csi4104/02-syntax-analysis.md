@@ -108,60 +108,64 @@ public class MicroEnglishParser {
       report a syntax error
   }
 
-	private void parserSentence() {
-		parseSubject();
-		parseVerb();
-		parseObject();
-		accept('.');
-	}
+  private void parserSentence() {
+    parseSubject();
+    parseVerb();
+    parseObject();
+    accept('.');
+  }
 
-	private void parseSubject() {
-		if (currentToken == 'I')
-			accept('I');
-		else if (currentToken == 'a') {
-			accept('a');
-			parseNoun();
-		}
-		...	
-	}
+  private void parseSubject() {
+  if (currentToken == 'I')
+    accept('I');
+  else if (currentToken == 'a') {
+    accept('a');
+    parseNoun();
+  }
+...
+  }
 }
 ```
 
-
-
 ### **Systematic Development of a RD parser**
+
 1. EBNF로 grammar 나타내기
 2. Grammar Transformations
-	- Left factorization and left recursion elimination
+   - Left factorization and left recursion elimination
 3. Parser class 생성
-	- private variable `currentToken`
-	- methods to call the `scanner::accept` and `acceptIt`
+   - private variable `currentToken`
+   - methods to call the `scanner::accept` and
+  `acceptIt`
 4. EBNF를 RD parser로 바꾸기
 
 private parsing methods 구현:
+
 - 각 nonterminal마다 `private parseN` 만들기
 - `public parse` method 구현
-	1.  첫 번째 token을 scanner에서 받음
-	2. call `parseS`. S는 start symbol
-	3. `parseS()`가 return하는 모든 token이 comsume되는 걸 보장해야함. 
+  1. 첫 번째 token을 scanner에서 받음
+  2. call `parseS`. S는 start symbol
+  3. `parseS()`가 return하는 모든 token이 comsume되는 걸 보장해야함.
 
 Error reporter를 try-catch를 이용해 만들 수 있다.
 
 ## LL Grammars
+
 - **L**eft-to-right parsing 
 - **L**eftmost derivation
 - **1** token look-ahead in the input stream
 
 **LL(1) Properties**
+
 - NOT containing left-recursion
 - NOT containing common prefixes
 - NOT ambiguous grammar
 
 #### Predictive Parsing (Recursive Descent Parsing)
-어떤 production이든 $A\to \alpha | \beta$ 면 
-$$ FIRST(\alpha) \cap FIRST(\beta) = \emptyset$$
-- 이런 점이 parser가 옳은 production을 하나의 lookahead로도 예측할 수 있게 함.
 
+어떤 production이든 $A\to \alpha | \beta$ 면
+$$ FIRST(\alpha) \cap FIRST(\beta) = \emptyset$$
+
+- 이런 점이 parser가 옳은 production을 하나의 lookahead로도 예측할 수 있게 함.
 
 p.72에서 infinite recursion이 되는 부분이 중요함
 
@@ -178,7 +182,7 @@ $Z::=aZb ~|~ 0$
 $O::=aObb~|~1$
 
 #### FIRST
-- 
+-
 
 e.g.
 X::= Y1Y2Y3 ... Yk
