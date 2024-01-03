@@ -77,30 +77,36 @@ $$LL \subset LR$$
 - 모든 grammar in LL은 LR로 parsing 가능하지만 어떤 grammar in LR은 LL로 parsing되지 않는다. 
 
 ## Top-down parsing (LL)
+
 - LL grammar는 linear임. + parser construction과 straight forward하게 맞음
 
 - production이 common prefix를 공유할 수 있음
-	- 이때는 2개의 토큰을 봐야할 수도 있음.
-	- 혹은 factor out the common prefix
+  - 이때는 2개의 토큰을 봐야할 수도 있음.
+  - 혹은 factor out the common prefix
 
 ## Recursive descent (LL) parser construction
+
 #### Recursive Descent Parsing
+
 **Key Idea**
+
 - parser tree structure <-> caller-callee relationship of parsing procedures that call each other at runtime
 
 *example*
 ![[Pasted image 20231012152017.png]]
+
 - 5개의 non-terminal -> 5개의 parsing routine
+
 ```java
 public class MicroEnglishParser {
-	private Token currentToken;
+  private Token currentToken;
 
-	private void accept(Token expectedToken) {
-		if (currentToken == expectedToken)
-			currentToken = scanner.scan();
-		else
-			report a syntax error
-	}
+  private void accept(Token expectedToken) {
+    if (currentToken == expectedToken)
+      currentToken = scanner.scan();
+    else
+      report a syntax error
+  }
 
 	private void parserSentence() {
 		parseSubject();
