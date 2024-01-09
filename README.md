@@ -2,7 +2,8 @@
 
 ## The list of courses that this repo contains
 
-**Undergraduated Courses**
+### Undergraduated Courses
+
 - [ ] CSI2101 - Discrete Structures
 - [ ] CSI3101 - Operating System
 - [ ] CSI3102 - Computer Architecture
@@ -16,21 +17,25 @@
 - [ ] CSI4116 - Computer Vision
 - [ ] CSI4119 - Multicore and GPU programming
 
-**Graduated Courses**
+### Graduated Courses
+
 - [/] CSI6505 - Multicore Programming Fundamentals
 - [/] CSI8108 - Advanced Compiler Design
 
-**Courses that I would not take a note**
-- CSI2100 - Computer Programming
-- CSI2102 - Object Oriented Programming
-- CSI2103 - Data Structures
-- CSI2106 - Introduction to Computer Science
-- CSI2107 - Computer Systems
-- CSI2111 - Logic Circuit Design (I need it?)
-- CSI3103 - Programming Language Structures
-- MAT2011 - Linear Algebra
+### Courses that I would not take a note
+
+- [ ] CSI2100 - Computer Programming
+- [ ] CSI2102 - Object Oriented Programming
+- [ ] CSI2103 - Data Structures
+- [ ] CSI2106 - Introduction to Computer Science
+- [ ] CSI2107 - Computer Systems
+- [ ] CSI2111 - Logic Circuit Design (I need it?)
+- [ ] CSI3103 - Programming Language Structures
+- [ ] MAT2011 - Linear Algebra
+
 ---
 
 ### TODOs
+
 - [ ] Migrate Notes from Notion
 - [ ] Make md from iPad
